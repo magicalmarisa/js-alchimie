@@ -1,0 +1,3 @@
+[submodule "js-tapstern"]
+	path = js-tapstern
+	url = https://github.com/magicalmarisa/js-tapstern.git
