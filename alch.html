@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=0.75">
+<title>DSA-Alchimie-Tool</title>
+<link rel="stylesheet" href="tap.css" />
+<style>
+	label { display: block; }
+</style>
+</head>
+<body>
+<script src="js-tapstern/tapstern.js"></script>
+<script src="alch.js"></script>
+<script>
+	window.onload = function(){initialisierung()};
+</script>
+<fieldset>
+	<legend>Spielwerte</legend>
+	<table>
+		<tr>
+			<td><label for="mu">Mut</label></td>
+			<td><input type="number" id="mu" value="12" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="kl">Klugheit</label></td>
+			<td> <input type="number" id="kl" value="12" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="ff">Fingerfertigkeit</label></td>
+			<td> <input type="number" id="ff" value="12" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="taw">TaW Alchimie</label></td>
+			<td> <input type="number" id="taw" value="12" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="bs">Brauschwierigkeit</label></td>
+			<td> <input type="number" id="bs" value="2" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="fw">Freiwilliger Zuschlag</label></td>
+			<td> <input type="number" id="fw" value="0" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="mod">Sonstige Erleichterungen/Erschwernisse</label></td>
+			<td> <input type="number" id="mod" value="0" onchange="calculate()"></td>
+		</tr>
+		<tr>
+			<td><label for="qbon">Qualitätsboni (AsP, Chymische Hochzeit o.ä)</label></td>
+			<td> <input type="number" id="qbon" value="0" onchange="calculate()"></td>
+		</tr>
+	</table>
+</fieldset>
+
+<div id="ergebnisse">
+<div class="einzeln">
+<table id="ergebnisse_einzeln">
+<tr>
+<th>Qualität</th>
+<th>Wahrscheinlichkeit</th>
+</tr>
+<tr>
+<td class="beschreibung">M</td>
+<td id="qualM" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">A</td>
+<td id="qualA" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">B</td>
+<td id="qualB" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">C</td>
+<td id="qualC" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">D</td>
+<td id="qualD" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">E</td>
+<td id="qualE" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">F</td>
+<td id="qualF" class="werte"></td>
+</tr>
+</table></div>
+<div class="summe">
+<table id="ergebnisse_kumulativ">
+<tr>
+<th>Qualität</th>
+<th>Wahrscheinlichkeit</th>
+</tr>
+<!--
+<tr>
+<td class="beschreibung">mindestens M</td>
+<td id="qualMplus"></td>
+</tr>
+//-->
+<tr>
+<td class="beschreibung">A+</td>
+<td id="qualAplus" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">B+</td>
+<td id="qualBplus" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">C+</td>
+<td id="qualCplus" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">D+</td>
+<td id="qualDplus" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">E+</td>
+<td id="qualEplus" class="werte"></td>
+</tr>
+<tr>
+<td class="beschreibung">F</td>
+<td id="qualFplus" class="werte"></td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+</html>
